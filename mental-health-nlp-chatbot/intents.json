@@ -1,0 +1,253 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "How are you doing",
+        "Is anyone there?",
+        "What's up?",
+        "Hello",
+        "Good day",
+        "What's popping",
+        "Good morning",
+        "Good evening",
+        "Hey there"
+      ],
+      "responses": [
+        "Hey! Welcome to Aura. How are you feeling today?",
+        "Hi there! I'm doing well. My name is Aura, your mental health companion. What's on your mind?",
+        "Hey there, welcome! I'm Aura. I'm here to listen and support you. How can I help today?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "See you later!",
+        "Goodbye!",
+        "Have a good day",
+        "Talk to you later",
+        "I have to go",
+        "Farewell"
+      ],
+      "responses": [
+        "See you later! Take gentle care of yourself.",
+        "Have a peaceful day! Remember that you are resilient and not alone.",
+        "Take care of yourself! I'm always here to support you whenever you need to talk."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thank's a lot!",
+        "Thank you so much",
+        "I appreciate your help"
+      ],
+      "responses": [
+        "Happy to help! You're never alone in this.",
+        "Any time! Remember to take things one step at a time.",
+        "My pleasure. I'm glad I could provide a listening ear."
+      ]
+    },
+    {
+      "tag": "about",
+      "patterns": [
+        "What do you do?",
+        "Who are you?",
+        "What are you here for?",
+        "What can you help me with?",
+        "Are you a real person?",
+        "Tell me about yourself!",
+        "What is Aura?"
+      ],
+      "responses": [
+        "I'm Aura, your compassionate mental health companion. While I'm an AI assistant and not a licensed clinician, I'm here to provide coping strategies, mental wellness resources, a non-judgmental space to talk, and supportive listening.",
+        "My name is Aura! I'm an empathetic conversational AI designed to support your mental well-being. Whether you're feeling anxious, stressed, down, or simply need grounding exercises, I'm here for you 24/7."
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "Can you help me?",
+        "How do I use this?",
+        "What topics do you know?",
+        "What can I ask you?",
+        "Help me"
+      ],
+      "responses": [
+        "You can talk to me about anxiety, depression, stress, panic attacks, sleep difficulties, loneliness, or self-care routines. If you ever feel in crisis or overwhelmed, I can also connect you to verified hotlines and emergency support.",
+        "I can help guide you through grounding exercises, discuss symptoms of anxiety and depression, share self-care practices, or just listen when you're having a tough day. How are you feeling right now?"
+      ]
+    },
+    {
+      "tag": "crisis",
+      "patterns": [
+        "I want to kill myself",
+        "I want to die",
+        "I feel like ending my life",
+        "I want to commit suicide",
+        "I can't live anymore",
+        "I want to hurt myself",
+        "Self harm",
+        "Life is not worth living",
+        "I feel suicidal"
+      ],
+      "responses": [
+        "Your life is precious, and you do not have to carry this immense pain alone. Please reach out right now to someone who can help:\n- In the US/Canada: Call or text 988 (Suicide & Crisis Lifeline, available 24/7, free & confidential).\n- In the UK: Call 111 or text SHOUT to 85258.\n- In India: Call 1800-599-0019 (KIRAN Mental Health Helpline) or 112.\n- Worldwide: Visit https://findahelpline.com to find immediate free support in your country.\nPlease connect with a crisis counselor, doctor, or someone you trust right now."
+      ]
+    },
+    {
+      "tag": "anxiety",
+      "patterns": [
+        "I think I have anxiety",
+        "What is anxiety?",
+        "Tell me about anxiety",
+        "Can I have some information about anxiety?",
+        "How do I support a loved one with anxiety?",
+        "How do I fix my anxiety?",
+        "I feel so nervous and anxious",
+        "My anxiety is acting up"
+      ],
+      "responses": [
+        "Anxiety is your body's natural response to stress—a feeling of fear or apprehension about what lies ahead. While everyone feels anxious at times, persistent anxiety that interferes with daily life is worth addressing. Healthy ways to manage anxiety include: box breathing (inhale 4s, hold 4s, exhale 4s, hold 4s), regular physical movement, mindfulness meditation, limiting caffeine, and maintaining a consistent sleep schedule. If anxiety feels unmanageable, speaking with a licensed therapist or physician can provide personalized tools."
+      ]
+    },
+    {
+      "tag": "depression",
+      "patterns": [
+        "I think I have depression",
+        "What is depression?",
+        "Tell me about depression",
+        "Can I have some information about depression?",
+        "How do I support a loved one with depression?",
+        "How do I fix my depression?",
+        "I have been feeling depressed"
+      ],
+      "responses": [
+        "Depression is a mood disorder characterized by persistent sadness, emptiness, fatigue, and a loss of interest in activities you usually enjoy. It affects how you think, feel, and manage daily life. It is not a sign of personal weakness and is highly treatable. Small daily steps like stepping into sunlight, gentle walks, maintaining routines, and reaching out to supportive friends can help. For long-term recovery, working with a therapist, psychiatrist, or medical professional is the recommended path."
+      ]
+    },
+    {
+      "tag": "stress",
+      "patterns": [
+        "I am so stressed out",
+        "Work is stressing me out",
+        "I have too much stress",
+        "How to handle stress?",
+        "Tell me about stress",
+        "Stress management"
+      ],
+      "responses": [
+        "Stress happens when demands exceed our perceived ability to cope. To reduce stress right now: 1) Try the 4-7-8 breathing technique (breathe in for 4s, hold for 7s, exhale slowly for 8s); 2) Break daunting tasks into tiny, bite-sized actions; 3) Unplug from screens for 15 minutes; 4) Remember to hydrate and stretch your shoulders and neck.",
+        "Feeling overwhelmed by stress is very common. Pause for a moment, drop your shoulders, unclench your jaw, and take two deep breaths. What is one small thing on your plate you can set aside for today?"
+      ]
+    },
+    {
+      "tag": "panic",
+      "patterns": [
+        "I am having a panic attack",
+        "I can't breathe",
+        "My heart is racing",
+        "I feel terrified and panicking",
+        "Help me calm down",
+        "Panic attack"
+      ],
+      "responses": [
+        "You are safe right now, and this intense feeling will pass. Let's do the 5-4-3-2-1 grounding exercise together:\n- Name 5 things you can see around you.\n- Name 4 things you can physically feel or touch.\n- Name 3 things you can hear right now.\n- Name 2 things you can smell.\n- Name 1 thing you can taste.\nTake a slow breath in... and let it out gently. You are here, and you will get through this."
+      ]
+    },
+    {
+      "tag": "sleep",
+      "patterns": [
+        "I can't sleep",
+        "I have insomnia",
+        "Trouble sleeping",
+        "I stay awake all night",
+        "How can I sleep better?",
+        "Tips for better sleep"
+      ],
+      "responses": [
+        "Sleep issues and mental wellness are deeply interconnected. To encourage restorative sleep: keep your bedroom cool and dark, avoid blue light/screens 45 minutes before bedtime, avoid caffeine past 2 PM, and try a body-scan meditation or progressive muscle relaxation in bed. If your mind is racing, writing your thoughts down on paper before turning off the lights can help offload mental clutter."
+      ]
+    },
+    {
+      "tag": "loneliness",
+      "patterns": [
+        "I feel so lonely",
+        "I have no friends",
+        "Nobody cares about me",
+        "I feel isolated",
+        "I feel all alone"
+      ],
+      "responses": [
+        "Feeling lonely is deeply painful, but please know that you are not invisible, and your presence in this world matters. Sometimes reaching out with a simple hello to an acquaintance, joining community groups aligned with your hobbies, or volunteering can rebuild social connections. I am always here to listen whenever you need company.",
+        "Loneliness is an emotion, not a permanent reflection of your worth. Treat yourself with compassion today, as you would a close friend who is going through a difficult time."
+      ]
+    },
+    {
+      "tag": "self_care",
+      "patterns": [
+        "What is self care?",
+        "How do I practice self care?",
+        "Self care tips",
+        "Ways to take care of myself",
+        "I need some self care ideas"
+      ],
+      "responses": [
+        "Self-care is about replenishing your mental, emotional, and physical energy. Simple self-care ideas you can do today:\n1. Drink a tall glass of fresh water.\n2. Step outside for 10 minutes of fresh air and natural sunlight.\n3. Put your phone on 'Do Not Disturb' while taking a warm bath or shower.\n4. Write down 3 small things you are grateful for.\n5. Give yourself permission to rest without feeling guilty."
+      ]
+    },
+    {
+      "tag": "affirmation",
+      "patterns": [
+        "I feel like a failure",
+        "I am not good enough",
+        "I hate myself",
+        "Give me an affirmation",
+        "I need some encouragement",
+        "I feel worthless"
+      ],
+      "responses": [
+        "You are worthy of kindness, peace, and understanding—especially from yourself. Making mistakes or facing setbacks does not make you a failure; it makes you human.",
+        "Here is an affirmation for today: 'I am doing the best I can with what I have right now, and that is enough. My worth is not defined by productivity or perfection.'",
+        "Be gentle with yourself. You have survived 100% of the difficult days you thought you couldn't get through before. Take things one breath at a time."
+      ]
+    },
+    {
+      "tag": "schizophrenia",
+      "patterns": [
+        "I think I have schizophrenia",
+        "What is schizophrenia?",
+        "Tell me about schizophrenia",
+        "Can I have some information about schizophrenia?",
+        "How do I support a loved one with schizophrenia?",
+        "How do I fix my schizophrenia?"
+      ],
+      "responses": [
+        "Schizophrenia is a complex mental health condition where individuals interpret reality differently, which may involve hallucinations, delusions, and disordered thinking or movement. It is a medical condition that requires professional psychiatric diagnosis and ongoing medical treatment. Early intervention significantly improves long-term outlook. If you or a loved one are experiencing symptoms, please consult a psychiatrist or healthcare professional for an individualized evaluation and support plan."
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?",
+        "Make me laugh",
+        "Cheer me up with a joke"
+      ],
+      "responses": [
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "What did the buffalo say when his son left for college? Bison!",
+        "Why did the hipster burn his mouth? He drank his coffee before it was cool.",
+        "I invented a new word! Plagiarism!"
+      ]
+    }
+  ]
+}

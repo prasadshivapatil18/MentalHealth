@@ -1,0 +1,12 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
+venv/
+env/
+.env
+
+# Model Checkpoints (optional to ignore or track; leaving data.pth tracked or local)
+# data.pth

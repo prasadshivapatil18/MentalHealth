@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura — Neo-Brutalist Mental Health AI & CDC Analytics</title>
+  <meta name="description" content="A playful, neo-brutalist contextual mental health companion and CDC Indicators analytics platform.">
+  
+  <!-- Neo-Brutalist Google Fonts: Space Grotesk (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+  <!-- Neo-Brutalist Stylesheet -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar / Micro-Banner -->
+  <div class="top-ticker">
+    <div class="ticker-content">
+      <span>✦ <strong>AURA MENTAL HEALTH COMPANION</strong></span>
+      <span>•</span>
+      <span>★ CDC HOUSEHOLD PULSE SURVEY DATASET (16,087 OBSERVATIONS)</span>
+      <span>•</span>
+      <span>✦ 24/7 CRISIS HELPLINES AVAILABLE (DIAL 988)</span>
+      <span>•</span>
+      <span>★ EMOTIONAL SUPPORT & COGNITIVE GROUNDING</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="neo-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-box">
+          <span class="brand-symbol">🌿</span>
+        </div>
+        <div class="brand-info">
+          <span class="brand-name">Aura<span class="brand-dot">.</span>ai</span>
+          <span class="brand-tag">NEO-BRUTALIST EDITION</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs with Neo-Brutalist Pill Styling -->
+      <nav class="neo-nav" role="tablist">
+        <button class="nav-tab active" data-tab="tab-chat" id="navChatBtn">
+          <span class="tab-icon">💬</span> Chatbot
+        </button>
+        <button class="nav-tab" data-tab="tab-dashboard" id="navDashBtn">
+          <span class="tab-icon">📊</span> CDC Indicators
+        </button>
+        <button class="nav-tab" data-tab="tab-screener" id="navScreenBtn">
+          <span class="tab-icon">📋</span> Assessment
+        </button>
+        <button class="nav-tab nav-crisis" data-tab="tab-crisis" id="navCrisisBtn">
+          <span class="tab-icon">🆘</span> Helplines
+        </button>
+      </nav>
+
+      <div class="header-badge">
+        <span class="status-sticker">
+          <span class="status-bullet"></span> Online & Listening
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main App Layout Container -->
+  <main class="neo-main">
+
+    <!-- ============================================================== -->
+    <!-- TAB 1: AI CHATBOT (AURA)                                       -->
+    <!-- ============================================================== -->
+    <section id="tab-chat" class="tab-pane active">
+      <div class="chat-layout">
+        
+        <!-- Left Sidebar: Profile & Quick Prompts -->
+        <aside class="chat-sidebar">
+          
+          <div class="neo-card sidebar-profile-card">
+            <div class="avatar-wrapper">
+              <div class="neo-avatar">🧠</div>
+              <span class="avatar-sticker">AI</span>
+            </div>
+            <h3 class="profile-name">Aura Companion</h3>
+            <p class="profile-badge-pill">PyTorch NLP Engine</p>
+            <p class="profile-bio">
+              A compassionate, non-judgmental conversational assistant trained for anxiety de-escalation, stress management, and self-care routines.
+            </p>
+            <div class="feature-tag-list">
+              <span class="mini-tag"># Grounding</span>
+              <span class="mini-tag"># Sleep Hygiene</span>
+              <span class="mini-tag"># Affirmations</span>
+            </div>
+          </div>
+
+          <div class="neo-card prompt-card">
+            <div class="card-header-mini">
+              <h4>Quick Prompts</h4>
+              <span class="sparkle-icon">✦</span>
+            </div>
+            <p class="hint-text">Click any prompt to ask Aura:</p>
+            <div class="chip-grid">
+              <button class="neo-chip" data-prompt="I am feeling overwhelmed and anxious today.">
+                ⚡ Feeling Anxious
+              </button>
+              <button class="neo-chip" data-prompt="Can you guide me through a 5-4-3-2-1 grounding exercise?">
+                🧘 Grounding Exercise
+              </button>
+              <button class="neo-chip" data-prompt="What are some natural tips to help me sleep better?">
+                🌙 Trouble Sleeping
+              </button>
+              <button class="neo-chip" data-prompt="I feel lonely and disconnected from people today.">
+                🤝 Feeling Lonely
+              </button>
+              <button class="neo-chip" data-prompt="I feel like a failure, can you give me an affirmation?">
+                ✨ Daily Affirmation
+              </button>
+              <button class="neo-chip" data-prompt="Can you tell me a funny joke to brighten my mood?">
+                😄 Tell Me a Joke
+              </button>
+            </div>
+          </div>
+
+          <div class="neo-card safety-note-card">
+            <div class="safety-icon-box">🛡️</div>
+            <div>
+              <strong>Safe & Confidential</strong>
+              <p>For immediate self-harm or suicidal crisis, please switch to the <strong>Helplines</strong> tab immediately.</p>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- Right: Conversation Container -->
+        <div class="neo-card chat-window-card">
+          
+          <div class="chat-top-bar">
+            <div class="chat-title-group">
+              <div class="pulse-indicator"></div>
+              <div>
+                <h3 class="chat-heading">Chat with Aura</h3>
+                <span class="chat-sub">Deep Learning Contextual Assistant</span>
+              </div>
+            </div>
+            <button id="clearChatBtn" class="neo-btn-sm" title="Clear conversation transcript">
+              🗑️ Reset Chat
+            </button>
+          </div>
+
+          <!-- Messages Stream -->
+          <div id="chatMessages" class="chat-stream" role="log" aria-live="polite">
+            
+            <div class="msg-group bot-group">
+              <div class="bubble-avatar bot-avatar">🌿</div>
+              <div class="bubble-content">
+                <div class="bubble-header">
+                  <span class="sender-name">Aura</span>
+                  <span class="msg-timestamp" id="initialTime">Just now</span>
+                  <span class="bubble-tag">GREETING</span>
+                </div>
+                <div class="neo-bubble bot-bubble">
+                  Hey there! Welcome to Aura. I'm your mental health friend and supportive companion. Whether you're feeling stressed, having trouble sleeping, navigating anxiety or sadness, or just need a safe space to share what's on your mind—I'm here to listen. How are you feeling right now?
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Typing Indicator -->
+          <div id="typingIndicator" class="typing-container" style="display: none;">
+            <div class="bubble-avatar mini-avatar">🌿</div>
+            <div class="typing-bubble">
+              <span class="type-dot"></span>
+              <span class="type-dot"></span>
+              <span class="type-dot"></span>
+            </div>
+            <span class="typing-label">Aura is thinking...</span>
+          </div>
+
+          <!-- Input Bar -->
+          <form id="chatForm" class="chat-form" onsubmit="return false;">
+            <div class="input-container">
+              <input 
+                type="text" 
+                id="chatInput" 
+                class="neo-input" 
+                placeholder="Type what is on your mind... (Press Enter to send)" 
+                autocomplete="off" 
+                maxlength="500"
+              />
+              <button type="submit" id="sendBtn" class="neo-btn neo-btn-primary">
+                <span>Send</span>
+                <span class="btn-arrow">➤</span>
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TAB 2: CDC INDICATORS EDA DASHBOARD                            -->
+    <!-- ============================================================== -->
+    <section id="tab-dashboard" class="tab-pane">
+      <div class="dashboard-stack">
+        
+        <!-- Hero Banner -->
+        <div class="neo-card hero-dashboard-card">
+          <div class="hero-content">
+            <span class="badge-label">PUBLIC HEALTH DATASET</span>
+            <h2>U.S. CDC Indicators of Anxiety & Depression</h2>
+            <p class="hero-desc">
+              Comprehensive empirical analysis derived from the <strong>U.S. Census Bureau & CDC Household Pulse Survey</strong>. 
+              Tracking reported symptom frequencies across <strong id="dashRecordCount">16,087</strong> national observations and 72 longitudinal survey waves.
+            </p>
+          </div>
+          <div class="hero-badges">
+            <div class="sticker-chip yellow">★ NCHS / CDC Portal</div>
+            <div class="sticker-chip coral">72 Survey Waves</div>
+            <div class="sticker-chip mint">Phase 1 – Phase 4.2</div>
+          </div>
+        </div>
+
+        <!-- 4 KPI Cards -->
+        <div class="kpi-row">
+          
+          <div class="neo-card kpi-card kpi-coral">
+            <div class="kpi-top">
+              <span class="kpi-symbol">⚡</span>
+              <span class="kpi-sticker">LATEST WAVE</span>
+            </div>
+            <div class="kpi-number" id="kpiCombined">21.4%</div>
+            <div class="kpi-title">Anxiety or Depression</div>
+            <p class="kpi-subtitle">National combined prevalence of adults reporting symptoms.</p>
+          </div>
+
+          <div class="neo-card kpi-card kpi-yellow">
+            <div class="kpi-top">
+              <span class="kpi-symbol">🌸</span>
+              <span class="kpi-sticker">ANXIETY</span>
+            </div>
+            <div class="kpi-number" id="kpiAnxiety">17.6%</div>
+            <div class="kpi-title">Anxiety Disorder Rate</div>
+            <p class="kpi-subtitle">Self-reported nervousness and uncontrollable worry.</p>
+          </div>
+
+          <div class="neo-card kpi-card kpi-blue">
+            <div class="kpi-top">
+              <span class="kpi-symbol">🌧️</span>
+              <span class="kpi-sticker">DEPRESSION</span>
+            </div>
+            <div class="kpi-number" id="kpiDepression">13.9%</div>
+            <div class="kpi-title">Depressive Disorder Rate</div>
+            <p class="kpi-subtitle">Persistent loss of interest and feelings of hopelessness.</p>
+          </div>
+
+          <div class="neo-card kpi-card kpi-mint">
+            <div class="kpi-top">
+              <span class="kpi-symbol">👥</span>
+              <span class="kpi-sticker">PEAK COHORT</span>
+            </div>
+            <div class="kpi-number" id="kpiHighestAge">18 - 29 yrs</div>
+            <div class="kpi-title" id="kpiHighestAgeVal">41.3% Average Rate</div>
+            <p class="kpi-subtitle">Highest recorded prevalence across all demographic cohorts.</p>
+          </div>
+
+        </div>
+
+        <!-- Longitudinal Line Chart Panel -->
+        <div class="neo-card chart-card">
+          <div class="chart-header">
+            <div>
+              <span class="badge-label">TIME-SERIES EDA</span>
+              <h3 class="chart-title">National Prevalence Trends Across 72 Survey Waves</h3>
+              <p class="chart-desc">Observing longitudinal patterns from 2020 through recent phases.</p>
+            </div>
+            <div class="neo-legend">
+              <span class="legend-badge leg-combined"><span class="leg-box"></span> Combined (21.4%)</span>
+              <span class="legend-badge leg-anxiety"><span class="leg-box"></span> Anxiety (17.6%)</span>
+              <span class="legend-badge leg-depression"><span class="leg-box"></span> Depression (13.9%)</span>
+            </div>
+          </div>
+          <div class="chart-box">
+            <canvas id="trendsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- 2 Column Analytics Grid: Demographics + State Explorer -->
+        <div class="dashboard-split">
+          
+          <!-- Demographics Bar Chart -->
+          <div class="neo-card chart-card">
+            <div class="chart-header">
+              <div>
+                <span class="badge-label">DEMOGRAPHIC DISPARITIES</span>
+                <h3 class="chart-title">Cohort Breakdown</h3>
+                <p class="chart-desc">Filter prevalence across biological & social subgroups.</p>
+              </div>
+            </div>
+            
+            <div class="filter-toolbar">
+              <button class="filter-tab active" data-group="By Age">Age</button>
+              <button class="filter-tab" data-group="By Sex">Sex</button>
+              <button class="filter-tab" data-group="By Education">Education</button>
+              <button class="filter-tab" data-group="By Race/Hispanic ethnicity">Race / Ethnicity</button>
+            </div>
+
+            <div class="chart-box small-chart-box">
+              <canvas id="demographicsChart"></canvas>
+            </div>
+          </div>
+
+          <!-- State-by-State Explorer -->
+          <div class="neo-card state-card">
+            <div class="chart-header">
+              <div>
+                <span class="badge-label">GEOGRAPHIC ATLAS</span>
+                <h3 class="chart-title">State-by-State Explorer</h3>
+                <p class="chart-desc">Select any U.S. State to view local symptom prevalence.</p>
+              </div>
+            </div>
+
+            <div class="selector-row">
+              <label for="stateSelect" class="neo-label">Select State:</label>
+              <select id="stateSelect" class="neo-select">
+                <option value="">Loading states...</option>
+              </select>
+            </div>
+
+            <!-- State Summary Spotlight -->
+            <div id="stateDetailCard" class="state-spotlight">
+              <div class="spotlight-header">
+                <h4 id="stateName">California</h4>
+                <span class="neo-tag yellow" id="stateQuartile">Quartile: Moderate</span>
+              </div>
+              <div class="spotlight-metrics">
+                <div class="spotlight-box">
+                  <span class="box-label">Combined</span>
+                  <span class="box-val" id="stateCombined">21.8%</span>
+                </div>
+                <div class="spotlight-box">
+                  <span class="box-label">Anxiety</span>
+                  <span class="box-val" id="stateAnxiety">18.1%</span>
+                </div>
+                <div class="spotlight-box">
+                  <span class="box-label">Depression</span>
+                  <span class="box-val" id="stateDepression">14.2%</span>
+                </div>
+              </div>
+              <p class="spotlight-note" id="stateComparisonText">
+                California reports symptoms +0.4% higher than the national baseline.
+              </p>
+            </div>
+
+            <!-- Top/Lowest States Table -->
+            <div class="table-container">
+              <h5 class="table-heading">Top & Lowest Prevalence States</h5>
+              <table class="neo-table">
+                <thead>
+                  <tr>
+                    <th>State</th>
+                    <th>Combined Rate</th>
+                    <th>Quartile</th>
+                  </tr>
+                </thead>
+                <tbody id="statesTableBody">
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TAB 3: SELF-ASSESSMENT (PHQ-4 SCREENER)                        -->
+    <!-- ============================================================== -->
+    <section id="tab-screener" class="tab-pane">
+      <div class="screener-wrapper">
+        
+        <div class="neo-card screener-hero-card">
+          <span class="badge-label">VALIDATED CLINICAL TOOL</span>
+          <h2>Patient Health Questionnaire-4 (PHQ-4)</h2>
+          <p class="screener-intro">
+            An ultra-brief 4-item screener measuring the frequency of anxiety and depressive symptoms over the last 2 weeks. 
+            Used widely in epidemiological studies and the CDC Household Pulse Survey.
+          </p>
+        </div>
+
+        <div class="neo-card screener-main-card">
+          <form id="screenerForm" onsubmit="return false;">
+            
+            <div class="instruction-banner">
+              <strong>Instructions:</strong> Over the last 2 weeks, how often have you been bothered by the following problems?
+            </div>
+
+            <!-- Q1 -->
+            <div class="neo-question-card">
+              <div class="q-header">
+                <span class="q-num-badge">Q1</span>
+                <span class="q-subscale">ANXIETY SUBSCALE</span>
+              </div>
+              <p class="q-prompt">Feeling nervous, anxious, or on edge</p>
+              <div class="neo-options-grid">
+                <label class="neo-radio-card">
+                  <input type="radio" name="q1" value="0" checked>
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Not at all <strong>(0)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q1" value="1">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Several days <strong>(1)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q1" value="2">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">More than half <strong>(2)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q1" value="3">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Nearly every day <strong>(3)</strong></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="neo-question-card">
+              <div class="q-header">
+                <span class="q-num-badge">Q2</span>
+                <span class="q-subscale">ANXIETY SUBSCALE</span>
+              </div>
+              <p class="q-prompt">Not being able to stop or control worrying</p>
+              <div class="neo-options-grid">
+                <label class="neo-radio-card">
+                  <input type="radio" name="q2" value="0" checked>
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Not at all <strong>(0)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q2" value="1">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Several days <strong>(1)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q2" value="2">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">More than half <strong>(2)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q2" value="3">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Nearly every day <strong>(3)</strong></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="neo-question-card">
+              <div class="q-header">
+                <span class="q-num-badge">Q3</span>
+                <span class="q-subscale">DEPRESSION SUBSCALE</span>
+              </div>
+              <p class="q-prompt">Little interest or pleasure in doing things</p>
+              <div class="neo-options-grid">
+                <label class="neo-radio-card">
+                  <input type="radio" name="q3" value="0" checked>
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Not at all <strong>(0)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q3" value="1">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Several days <strong>(1)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q3" value="2">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">More than half <strong>(2)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q3" value="3">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Nearly every day <strong>(3)</strong></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="neo-question-card">
+              <div class="q-header">
+                <span class="q-num-badge">Q4</span>
+                <span class="q-subscale">DEPRESSION SUBSCALE</span>
+              </div>
+              <p class="q-prompt">Feeling down, depressed, or hopeless</p>
+              <div class="neo-options-grid">
+                <label class="neo-radio-card">
+                  <input type="radio" name="q4" value="0" checked>
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Not at all <strong>(0)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q4" value="1">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Several days <strong>(1)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q4" value="2">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">More than half <strong>(2)</strong></span>
+                </label>
+                <label class="neo-radio-card">
+                  <input type="radio" name="q4" value="3">
+                  <span class="radio-box"></span>
+                  <span class="radio-text">Nearly every day <strong>(3)</strong></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="screener-btn-row">
+              <button type="button" id="submitScreenerBtn" class="neo-btn neo-btn-primary neo-btn-lg">
+                <span>Calculate Score & Benchmark</span>
+                <span class="btn-arrow">★</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Score Result Display -->
+          <div id="screenerResult" class="neo-result-box" style="display: none;">
+            
+            <div class="result-headline-row">
+              <div>
+                <span class="neo-tag mint" id="resSeverity">MINIMAL</span>
+                <h3 class="result-score-val" id="resScore">Total Score: 0 / 12</h3>
+              </div>
+              <p class="result-explanation" id="resDesc">
+                Symptoms are minimal or within normal baseline.
+              </p>
+            </div>
+
+            <div class="subscales-row">
+              <div class="subscale-box">
+                <span class="subscale-tag">ANXIETY (0-6)</span>
+                <div class="subscale-num" id="resAnxietyScore">0 / 6</div>
+                <span class="subscale-flag" id="resAnxietyStatus">Negative screen (&lt; 3)</span>
+              </div>
+              <div class="subscale-box">
+                <span class="subscale-tag">DEPRESSION (0-6)</span>
+                <div class="subscale-num" id="resDepressionScore">0 / 6</div>
+                <span class="subscale-flag" id="resDepressionStatus">Negative screen (&lt; 3)</span>
+              </div>
+            </div>
+
+            <div class="benchmark-note-box">
+              <h5>📍 CDC National Benchmark</h5>
+              <p>
+                In the CDC Household Pulse Survey, <strong id="resPopRate">21.4%</strong> of U.S. adults reported symptoms meeting the threshold for anxiety or depression.
+              </p>
+            </div>
+
+            <div class="result-action-row">
+              <button class="neo-btn neo-btn-coral" id="talkToAuraBtn">
+                💬 Discuss these results with Aura ➤
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TAB 4: CRISIS HELPLINES & SAFETY DIRECTORY                     -->
+    <!-- ============================================================== -->
+    <section id="tab-crisis" class="tab-pane">
+      <div class="crisis-stack">
+        
+        <div class="neo-card crisis-alert-card">
+          <div class="crisis-icon">🚨</div>
+          <div class="crisis-text">
+            <h2>Immediate 24/7 Crisis Support</h2>
+            <p>
+              If you or someone you care about is experiencing thoughts of suicide, severe emotional distress, or self-harm, please reach out now. 
+              Compassionate, confidential support is available 24/7/365.
+            </p>
+          </div>
+        </div>
+
+        <div class="helplines-cards-grid">
+          
+          <!-- USA / Canada -->
+          <div class="neo-card helpline-card spotlight-helpline">
+            <span class="country-pill">🇺🇸 USA & 🇨🇦 CANADA</span>
+            <h3>988 Suicide & Crisis Lifeline</h3>
+            <p>Available 24/7 in English and Spanish. Free, private, and confidential.</p>
+            <div class="helpline-btn-group">
+              <a href="tel:988" class="neo-btn neo-btn-coral helpline-btn">📞 Call 988</a>
+              <a href="sms:988" class="neo-btn neo-btn-secondary helpline-btn">💬 Text 988</a>
+            </div>
+          </div>
+
+          <!-- UK -->
+          <div class="neo-card helpline-card">
+            <span class="country-pill">🇬🇧 UNITED KINGDOM</span>
+            <h3>NHS 111 & SHOUT</h3>
+            <p>Call 111 for mental health emergency assessment, or text SHOUT to 85258.</p>
+            <div class="helpline-btn-group">
+              <a href="tel:111" class="neo-btn neo-btn-coral helpline-btn">📞 Call 111</a>
+              <a href="sms:85258?body=SHOUT" class="neo-btn neo-btn-secondary helpline-btn">💬 Text SHOUT</a>
+            </div>
+          </div>
+
+          <!-- India -->
+          <div class="neo-card helpline-card">
+            <span class="country-pill">🇮🇳 INDIA</span>
+            <h3>KIRAN Helpline & 112</h3>
+            <p>Govt. of India 24/7 national mental health helpline providing clinical guidance.</p>
+            <div class="helpline-btn-group">
+              <a href="tel:18005990019" class="neo-btn neo-btn-coral helpline-btn">📞 1800-599-0019</a>
+              <a href="tel:112" class="neo-btn neo-btn-secondary helpline-btn">🚨 Dial 112</a>
+            </div>
+          </div>
+
+          <!-- Australia -->
+          <div class="neo-card helpline-card">
+            <span class="country-pill">🇦🇺 AUSTRALIA</span>
+            <h3>Lifeline Australia</h3>
+            <p>24-hour crisis support, suicide prevention, and mental health counseling.</p>
+            <div class="helpline-btn-group">
+              <a href="tel:131114" class="neo-btn neo-btn-coral helpline-btn">📞 13 11 14</a>
+              <a href="sms:0477131114" class="neo-btn neo-btn-secondary helpline-btn">💬 Text 0477 13 11 14</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Global Directory -->
+        <div class="neo-card global-card">
+          <div class="global-inner">
+            <div class="global-info">
+              <h4>🌍 International Crisis Directory</h4>
+              <p>Find free, confidential mental health hotlines and emergency support in over 130 countries worldwide.</p>
+            </div>
+            <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer" class="neo-btn neo-btn-primary">
+              Visit FindAHelpline.com ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Neo-Brutalist Footer -->
+  <footer class="neo-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <strong>⚠️ Clinical & Medical Notice:</strong>
+        <p>Aura is an educational AI project and does not offer medical diagnosis, psychiatric therapy, or emergency crisis treatment.</p>
+      </div>
+      <div class="footer-right">
+        <span class="footer-badge">CDC Household Pulse Survey</span>
+        <span class="footer-badge">PyTorch Deep Learning</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Controller Script -->
+  <script src="/static/app.js"></script>
+</body>
+</html>
